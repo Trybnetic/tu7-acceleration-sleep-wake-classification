@@ -1,0 +1,23 @@
+name: bedtime
+channels:
+  - defaults
+  - conda-forge
+  - omnia
+dependencies:
+  - python=3.8
+  - ipython
+  - jupyter
+  - pandas
+  - numpy
+  - h5py
+  - seaborn
+  - matplotlib
+  - tqdm
+  - sphinx
+  - pip
+  - pip:
+    - sphinx-book-theme
+    - myst-nb
+    - sphinxcontrib-bibtex
+    - sphinx_thebe
+    - numpydoc
