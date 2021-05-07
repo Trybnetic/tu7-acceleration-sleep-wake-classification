@@ -1,9 +1,13 @@
-FROM gpuci/miniconda-cuda
+FROM gpuci/miniconda-cuda:11.1-devel-ubuntu20.04
 
-COPY ./environment.yml .
-RUN conda create -f environment.yml
-RUN conda activate bedtime
+WORKDIR /home
 
-CMD jupyter notebook --no-browser --port=8080
+ADD environment.yml /tmp/environment.yml
+RUN conda update -n base -c defaults conda
+RUN conda env create -f /tmp/environment.yml
 
-EXPOSE 8080
+RUN echo "source activate bedtime" > ~/.bashrc
+ENV PATH /opt/conda/envs/env/bin:$PATH
+
+# CMD jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
+ENTRYPOINT ["conda", "run", "-n", "bedtime", "jupyter", "notebook", "--ip=0.0.0.0", "--allow-root", "--NotebookApp.token=''", "--NotebookApp.password=''"]
