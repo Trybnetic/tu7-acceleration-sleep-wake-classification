@@ -4,7 +4,7 @@ Preprocessing
 
 .. toctree::
     process-gt3x.ipynb
+    validate-hdf5-file.ipynb
     process-edf.ipynb
     create-subset.ipynb
-    obtain-position-data.ipynb
     :maxdepth: 2
