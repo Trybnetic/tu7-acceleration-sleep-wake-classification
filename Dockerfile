@@ -9,5 +9,13 @@ RUN conda env create -f /tmp/environment.yml
 RUN echo "source activate bedtime" > ~/.bashrc
 ENV PATH /opt/conda/envs/env/bin:$PATH
 
+# This is a workaround until paat can be installed from PyPi
+ADD pkgs/paat/ pkgs/paat/
+WORKDIR pkgs/paat
+RUN conda run -n bedtime pip install -r requirements.txt
+RUN conda run -n bedtime python setup.py develop
+
+WORKDIR /home
+
 # CMD jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
 ENTRYPOINT ["conda", "run", "-n", "bedtime", "jupyter", "notebook", "--ip=0.0.0.0", "--allow-root", "--NotebookApp.token=''", "--NotebookApp.password=''"]

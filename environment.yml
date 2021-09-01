@@ -22,3 +22,5 @@ dependencies:
     - sphinx_thebe
     - numpydoc
     - tables
+    - imblearn
+    - python_speech_features
