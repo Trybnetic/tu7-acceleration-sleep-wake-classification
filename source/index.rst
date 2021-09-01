@@ -13,7 +13,8 @@ Table of Contents
 
 .. toctree::
     getting-started.rst
-    preprocessing.rst
-    machine-learning.rst
-    plots-and-figures.rst
+    1. Process GT3X.ipynb
+    3. Create Time in Bed Dataset.ipynb
+    4. Add Time in Bed Data.ipynb
+    5. Visualize Data.ipynb
     :maxdepth: 2
