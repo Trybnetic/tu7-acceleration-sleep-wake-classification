@@ -16,8 +16,8 @@ follow the following steps.
 Getting Started
 ===============
 
-Clone this repository
----------------------
+
+1. Clone this repository
 
 .. code-block:: bash
 
@@ -25,32 +25,28 @@ Clone this repository
     cd sleep-study/
 
 
-Install the dependencies
-------------------------
+2. Install the dependencies
 
 .. code-block:: bash
 
     conda create -f environment.yml
 
 
-Activate the environment
-------------------------
+3. Activate the environment
 
 .. code-block:: bash
 
     conda activate bedtime
 
 
-Work on the notebooks
----------------------
+4. Work on the notebooks
 
 .. code-block:: bash
 
     jupyter notebook
 
 
-Update the documentation
-------------------------
+5. Update the documentation
 
 .. code-block:: bash
 
