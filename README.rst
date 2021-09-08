@@ -1,6 +1,17 @@
-==================
-TU7 Sleep Analysis
-==================
+=========================================
+TU7 Time in Bed Study: Data Preprocessing
+=========================================
+
+This repository contains the documentation on how the TU7 data was preprocessed
+to be used in the time in bed analysis and will be most likely the cornerstone
+also for further studies working with this data.
+The documentation contains code snippets to load the ``.gt3x`` and the data
+from the Actiwave ``.edf`` files and store the data for the subjects that worn
+both devices in a new HDF5 file ``BEDTIME_TU7.hdf5`` which is compatible with
+the pandas API. Later notebooks also show how the manual annotation data can be
+added resulting in a new ``ANNOTATED_BEDTIME_TU7.hdf5`` file. All code here was
+developed using conda to make it reproducible. To work with this repository
+follow the following steps.
 
 Getting Started
 ===============
