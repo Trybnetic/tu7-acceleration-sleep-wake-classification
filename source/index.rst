@@ -13,8 +13,8 @@ Table of Contents
 
 .. toctree::
     getting-started.rst
-    1. Process GT3X.ipynb
-    3. Create Time in Bed Dataset.ipynb
-    4. Add Time in Bed Data.ipynb
-    5. Visualize Data.ipynb
+    01_process_gt3x.ipynb
+    03_create_time_in_bed_dataset.ipynb
+    04_add_time_in_bed_annotation.ipynb
+    05_data_visualization.ipynb
     :maxdepth: 2
