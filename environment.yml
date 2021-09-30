@@ -1,18 +1,21 @@
-name: bedtime
+name: ml-docs
 channels:
   - defaults
   - conda-forge
   - omnia
+  - bioconda
 dependencies:
   - python=3.8
-  - ipython
-  - jupyter
-  - pandas
-  - numpy
-  - h5py
-  - seaborn
-  - matplotlib
-  - tqdm
+  - ipython=7.22.0
+  - jupyter=1.0.0
+  - pandas=1.2.4
+  - numpy=1.21.0
+  - h5py=3.2.1
+  - tqdm=4.61.2
+  - pytorch=1.7.1
+  - scikit-learn=0.24.2
+  - matplotlib=3.3.4
+  - seaborn=0.11.1
   - sphinx
   - pip
   - pip:
@@ -21,6 +24,6 @@ dependencies:
     - sphinxcontrib-bibtex
     - sphinx_thebe
     - numpydoc
-    - tables
-    - imblearn
+    - tables==3.6.1
+    - imbalanced-learn==0.8.0
     - python_speech_features
