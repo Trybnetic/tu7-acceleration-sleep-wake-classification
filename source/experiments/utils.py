@@ -106,8 +106,8 @@ def load_data(file_path, subject_id, target_dict, resampled_frequency="1s", coln
     time_col, x_col, y_col, z_col, target_col = colnames
 
     if resampled_frequency:
-        tmp = data.set_index(time_col).resample(resampled_frequency).mean()
-        tmp = pd.merge_asof(tmp, data[[time_col, target_col]], on=time_col)
+        tmp = data.set_index(time_col).resample(resampled_frequency).mean().reset_index()
+        tmp = pd.merge_asof(tmp[[time_col, x_col, y_col, z_col]], data[[time_col, target_col]], on=time_col, direction='nearest')
         tmp = tmp.loc[~tmp[target_col].isnull(), :]
     else:
         tmp = data

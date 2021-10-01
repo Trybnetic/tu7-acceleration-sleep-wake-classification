@@ -10,10 +10,10 @@ RUN echo "source activate ml-docs" > ~/.bashrc
 ENV PATH /opt/conda/envs/env/bin:$PATH
 
 # This is a workaround until paat can be installed from PyPi
-ADD pkgs/paat/ pkgs/paat/
-WORKDIR pkgs/paat
-RUN conda run -n ml-docs pip install -r requirements.txt
-RUN conda run -n ml-docs python setup.py develop
+#ADD pkgs/paat/ pkgs/paat/
+#WORKDIR pkgs/paat
+#RUN conda run -n ml-docs pip install -r requirements.txt
+#RUN conda run -n ml-docs python setup.py develop
 
 WORKDIR /home
 

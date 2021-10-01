@@ -43,7 +43,7 @@ class MLP(nn.Module):
 
         layers = [nn.Linear(input_dim, self.hid_dim), nn.Dropout(dropout), nn.ReLU()]
 
-        for layer in range(max(0, n_layers - 2)):
+        for layer in range(max(0, n_layers - 1)):
             layers += [nn.Linear(self.hid_dim, self.hid_dim), nn.Dropout(dropout), nn.ReLU()]
 
         layers += [nn.Linear(self.hid_dim, output_dim), nn.Sigmoid()]
