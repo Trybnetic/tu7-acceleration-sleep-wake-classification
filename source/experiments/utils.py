@@ -80,12 +80,17 @@ def sadeh(data, weights=[7.601, 0.065, 1.08, 0.056, 0.703]):
 
     def _score(window, weights=weights):
 
-        if window[5] == 0:
-            log_res = 0  # use 0 if epoch count is zero
-        else:
-            log_res = np.log(window[5])
+        # Arithmetic mean (average) of the activity counts for the window (AVG)
+        avg = np.average(window)
+        # Number of epochs that have counts >= 50 and < 100 (NATS)
+        nats = np.sum((window >= 50) & (window < 100))
+        # Standard deviation for the first 6 epochs of the window (SD)
+        sd = np.std(window[:6])
+        # Natural (base e) logarithm of a current epoch. Note: If the epoch count is 0, we make this value 0 to avoid infinity problems (LG)
+        lg = 0 if window[5] == 0 else np.log(window[5])
 
-        return weights[0] - (weights[1] * np.average(window)) - (weights[2] * np.sum((window >= 50) & (window < 100))) - (weights[3] * np.std(window)) - (weights[4] * log_res)
+        # Compute algorithm
+        return weights[0] - (weights[1] * avg) - (weights[2] * nats) - (weights[3] * sd) - (weights[4] * lg)
 
     sleep_data = np.apply_along_axis(_score, 1, sliding_windows)
 
