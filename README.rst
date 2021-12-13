@@ -1,17 +1,20 @@
-=========================================
-TU7 Time in Bed Study: Data Preprocessing
-=========================================
+==========================================================================================================================================
+Code and materials from "Discrimination of sleep and wake periods from a hip-worn raw acceleration sensor using recurrent neural networks"
+==========================================================================================================================================
 
-This repository contains the documentation on how the TU7 data was preprocessed
-to be used in the time in bed analysis and will be most likely the cornerstone
-also for further studies working with this data.
+This repository contains the documentation, code and materials for our paper 
+"Discrimination of sleep and wake periods from a hip-worn raw acceleration 
+sensor using recurrent neural networks".
 The documentation contains code snippets to load the ``.gt3x`` and the data
 from the Actiwave ``.edf`` files and store the data for the subjects that worn
 both devices in a new HDF5 file ``BEDTIME_TU7.hdf5`` which is compatible with
 the pandas API. Later notebooks also show how the manual annotation data can be
-added resulting in a new ``ANNOTATED_BEDTIME_TU7.hdf5`` file. All code here was
-developed using conda to make it reproducible. To work with this repository
-follow the following steps.
+added resulting in a new ``ANNOTATED_BEDTIME_TU7.hdf5`` file. 
+Further notebooks can be found in which the performed experiments are documented
+and in which the data analysis was conducted.
+
+All code here was developed using conda to make it reproducible. To work with 
+this repository follow the following steps.
 
 Getting Started
 ===============
@@ -44,13 +47,6 @@ Getting Started
 .. code-block:: bash
 
     jupyter notebook
-
-
-5. Update the documentation
-
-.. code-block:: bash
-
-    make html
 
 
 Acknowledgements
