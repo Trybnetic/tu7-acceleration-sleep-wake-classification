@@ -148,12 +148,12 @@ def fbanks(signal, sample_rate, win_len, win_step, NFFT=512, nfilt=40):
     pow_frames = (1.0 / NFFT) * (mag_frames ** 2)
 
     low_freq_mel = 0
-    high_freq_mel = hz_to_mel(sample_rate)
+    high_freq_mel = hz_to_mel(frame_len)
 
     mel_points = np.linspace(low_freq_mel, high_freq_mel, nfilt + 2)
     hz_points = mel_to_hz(mel_points)
 
-    bin = np.floor((NFFT + 1) * hz_points / sample_rate)
+    bin = np.floor((NFFT + 1) * hz_points / frame_len)
 
     fbank = np.zeros((nfilt, int(np.floor(NFFT / 2 + 1))))
     for m in range(1, nfilt + 1):
